@@ -1,8 +1,11 @@
 import { styled } from 'styled-components'
 
 export const HeaderContainer = styled.header`
-  color: ${(props) => props.theme.blueColor};
+  //background-color: #f0f0f0;
   padding: 15px 8px;
+  -webkit-box-shadow: 0px 4px 7px -4px rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: 0px 4px 7px -4px rgba(0, 0, 0, 0.09);
+  box-shadow: 0px 4px 7px -4px rgba(0, 0, 0, 0.09);
   img {
     width: 120px;
   }
