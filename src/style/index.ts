@@ -1,4 +1,3 @@
-import { Theme } from './../themes/dark'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
@@ -19,6 +18,11 @@ const GlobalStyle = createGlobalStyle`
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
+  }
+
+  span {
+    color: ${(props) => props.theme.blueColor};
+    font-weight: bold;
   }
 `
 export default GlobalStyle
