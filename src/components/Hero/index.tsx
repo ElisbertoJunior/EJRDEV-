@@ -1,7 +1,7 @@
 import heroImage from '../../assets/images/pc.svg'
 import git from '../../assets/icons/github (2).png'
 import linkedin from '../../assets/icons/likedin.png'
-import { HeroContainer, HeroContent } from './styles'
+import { HeroContainer, HeroContent, MainButton } from './styles'
 const Hero = () => {
   return (
     <HeroContainer>
@@ -31,6 +31,7 @@ const Hero = () => {
               </a>
             </li>
           </ul>
+          <MainButton>Ver portfolio</MainButton>
         </HeroContent>
         <img src={heroImage} />
       </div>
