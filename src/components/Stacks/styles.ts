@@ -4,6 +4,7 @@ export const StackList = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 16px;
 `
 export const StackItem = styled.li`
@@ -20,5 +21,6 @@ export const StackItem = styled.li`
     font-size: 12px;
     color: #d0cccc;
     font-style: oblique;
+    text-align: center;
   }
 `
