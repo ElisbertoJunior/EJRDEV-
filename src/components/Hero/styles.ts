@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 
 export const HeroContainer = styled.section`
-  padding: 80px 8px;
+  padding: 80px 0;
   color: ${(props) => props.theme.textColor};
 
   .container {
