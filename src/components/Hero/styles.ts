@@ -32,6 +32,7 @@ export const MainButton = styled.button`
   border: none;
   cursor: pointer;
   border-radius: 8px;
+  font-style: oblique;
 
   width: 250px;
   height: 40px;

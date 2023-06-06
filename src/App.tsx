@@ -8,6 +8,7 @@ import Header from './components/Header'
 import ThemeButton from './components/ThemeButton'
 
 import Routes from './routes'
+import Footer from './components/Footer'
 
 const App = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(true)
@@ -18,6 +19,7 @@ const App = () => {
         <GlobalStyle />
         <Header />
         <Routes />
+        <Footer />
       </BrowserRouter>
       <ThemeButton onClick={() => setUseDarkTheme(!useDarkTheme)} />
     </ThemeProvider>

@@ -21,17 +21,25 @@ const Hero = () => {
           </p>
           <ul>
             <li>
-              <a href="#">
+              <a
+                target="_blank"
+                href="https://github.com/ElisbertoJunior"
+                rel="noreferrer"
+              >
                 <img src={git} />
               </a>
             </li>
             <li>
-              <a href="#">
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/elisbertojuniordev/"
+                rel="noreferrer"
+              >
                 <img src={linkedin} />
               </a>
             </li>
           </ul>
-          <MainButton>Ver portfolio</MainButton>
+          <MainButton>Baixar CV</MainButton>
         </HeroContent>
         <img src={heroImage} />
       </div>

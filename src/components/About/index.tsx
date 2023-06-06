@@ -28,10 +28,22 @@ const About = () => {
           </p>
           <ul>
             <li>
-              <img src={gitHubIcon} />
+              <a
+                target="_blank"
+                href="https://github.com/ElisbertoJunior"
+                rel="noreferrer"
+              >
+                <img src={gitHubIcon} />
+              </a>
             </li>
             <li>
-              <img src={linkedinIcon} />
+              <a
+                target="_blank"
+                href="https://www.linkedin.com/in/elisbertojuniordev/"
+                rel="noreferrer"
+              >
+                <img src={linkedinIcon} />
+              </a>
             </li>
           </ul>
         </div>
