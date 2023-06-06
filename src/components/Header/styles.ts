@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { styled } from 'styled-components'
 
 export const HeaderContainer = styled.header`
@@ -19,7 +20,7 @@ export const Links = styled.ul`
   align-items: center;
   gap: 16px;
 `
-export const ItemLink = styled.a`
+export const ItemLink = styled(Link)`
   color: ${(props) => props.theme.blueColor};
   font-style: italic;
   font-weight: bold;

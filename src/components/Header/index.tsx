@@ -8,13 +8,13 @@ const Header = () => {
         <nav>
           <Links>
             <li>
-              <ItemLink href="#">Início</ItemLink>
+              <ItemLink to={'/'}>Início</ItemLink>
             </li>
             <li>
-              <ItemLink href="#">Projetos</ItemLink>
+              <ItemLink to={'/'}>Projetos</ItemLink>
             </li>
             <li>
-              <ItemLink href="#">Contato</ItemLink>
+              <ItemLink to={'/'}>Contato</ItemLink>
             </li>
           </Links>
         </nav>
