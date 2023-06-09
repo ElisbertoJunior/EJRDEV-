@@ -10,6 +10,9 @@ import ThemeButton from './components/ThemeButton'
 import Routes from './routes'
 import Footer from './components/Footer'
 
+import sun from './assets/icons/sun.png'
+import moon from './assets/icons/moon.png'
+
 const App = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(true)
 
@@ -23,7 +26,9 @@ const App = () => {
         </div>
         <Footer />
       </BrowserRouter>
-      <ThemeButton onClick={() => setUseDarkTheme(!useDarkTheme)} />
+      <ThemeButton onClick={() => setUseDarkTheme(!useDarkTheme)}>
+        <img height={45} src={useDarkTheme ? moon : sun} />
+      </ThemeButton>
     </ThemeProvider>
   )
 }

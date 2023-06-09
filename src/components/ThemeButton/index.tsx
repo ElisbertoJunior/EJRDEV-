@@ -2,10 +2,11 @@ import { ButtonContainer } from './styles'
 
 type Props = {
   onClick: () => void
+  children: JSX.Element
 }
 
-const ThemeButton = ({ onClick }: Props) => {
-  return <ButtonContainer onClick={onClick}>Trocar</ButtonContainer>
+const ThemeButton = ({ onClick, children }: Props) => {
+  return <ButtonContainer onClick={onClick}>{children}</ButtonContainer>
 }
 
 export default ThemeButton

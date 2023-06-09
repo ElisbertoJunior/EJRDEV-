@@ -2,11 +2,12 @@ import { Container } from './styles'
 
 type Props = {
   children: string
+  marginTop?: string
 }
 
-const SectionTitle = ({ children }: Props) => {
+const SectionTitle = ({ children, marginTop }: Props) => {
   return (
-    <Container>
+    <Container marginTop={marginTop}>
       <div />
       <h3>{children}</h3>
     </Container>

@@ -41,10 +41,12 @@ const Hero = () => {
             </a>
           </li>
         </ul>
-        <MainButton>
-          Baixar CV
-          <img src={download} />
-        </MainButton>
+        <a href="https://drive.google.com/u/0/uc?id=11BAmCgxM-cF8_--8KZAHYDjp6bQ8Wfjj&export=download">
+          <MainButton>
+            Baixar CV
+            <img src={download} />
+          </MainButton>
+        </a>
       </HeroContent>
       <img src={heroImage} />
     </HeroContainer>

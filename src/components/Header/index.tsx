@@ -15,7 +15,7 @@ const Header = () => {
               <ItemLink to={'/projects'}>Projetos</ItemLink>
             </li>
             <li>
-              <ItemLink to={'/'}>Contato</ItemLink>
+              <ItemLink to={'/contact'}>Contato</ItemLink>
             </li>
           </Links>
         </nav>

@@ -4,6 +4,7 @@ export const FooterContainer = styled.div`
   background-color: ${(props) => props.theme.backgroundFooterColor};
   color: ${(props) => props.theme.textColor};
   font-style: oblique;
+  margin-top: 80px;
 
   a {
     color: ${(props) => props.theme.textColor};

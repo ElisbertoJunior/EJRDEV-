@@ -1,9 +1,14 @@
 import { styled } from 'styled-components'
 
-export const Container = styled.div`
+type MarginProps = {
+  marginTop?: string
+}
+
+export const Container = styled.div<MarginProps>`
   display: flex;
   gap: 16px;
   padding: 20px 0;
+  margin-top: ${(props) => props.marginTop || '0'};
 
   > div {
     width: 8px;

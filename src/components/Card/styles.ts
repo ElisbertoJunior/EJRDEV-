@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 
 export const CardContainer = styled.div`
-  margin: 60px 0;
+  margin: 60px 0 0;
   border-radius: 10px;
   color: ${(props) => props.theme.textColor};
   font-style: oblique;
@@ -9,6 +9,7 @@ export const CardContainer = styled.div`
   -webkit-box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.11);
   -moz-box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.11);
   box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.11);
+  transition: 0.5s;
 
   img {
     width: 100%;
@@ -21,6 +22,11 @@ export const CardContainer = styled.div`
     p {
       margin: 8px 0;
     }
+  }
+
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
   }
 `
 export const GitHubButton = styled.button`
