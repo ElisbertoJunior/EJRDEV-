@@ -6,6 +6,13 @@ export const HeaderContainer = styled.header`
   -webkit-box-shadow: 0px 4px 7px -4px rgba(0, 0, 0, 0.09);
   -moz-box-shadow: 0px 4px 7px -4px rgba(0, 0, 0, 0.09);
   box-shadow: 0px 4px 7px -4px rgba(0, 0, 0, 0.09);
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: ${(props) => props.theme.backgroundColor};
+
   img {
     width: 120px;
   }

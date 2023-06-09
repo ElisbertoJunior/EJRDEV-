@@ -1,5 +1,6 @@
 import logo from '../../assets/images/EJRDEV.png'
 import { HeaderContainer, ItemLink, Links } from './styles'
+
 const Header = () => {
   return (
     <HeaderContainer>
@@ -11,7 +12,7 @@ const Header = () => {
               <ItemLink to={'/'}>Início</ItemLink>
             </li>
             <li>
-              <ItemLink to={'/'}>Projetos</ItemLink>
+              <ItemLink to={'/projects'}>Projetos</ItemLink>
             </li>
             <li>
               <ItemLink to={'/'}>Contato</ItemLink>

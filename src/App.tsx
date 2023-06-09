@@ -18,7 +18,9 @@ const App = () => {
       <BrowserRouter>
         <GlobalStyle />
         <Header />
-        <Routes />
+        <div className="container">
+          <Routes />
+        </div>
         <Footer />
       </BrowserRouter>
       <ThemeButton onClick={() => setUseDarkTheme(!useDarkTheme)} />

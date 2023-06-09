@@ -4,9 +4,7 @@ export const HeroContainer = styled.section`
   padding: 80px 0;
   color: ${(props) => props.theme.textColor};
 
-  .container {
-    display: flex;
-  }
+  display: flex;
 `
 export const HeroContent = styled.div`
   p {
@@ -33,6 +31,15 @@ export const MainButton = styled.button`
   cursor: pointer;
   border-radius: 8px;
   font-style: oblique;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  img {
+    height: 16px;
+  }
 
   width: 250px;
   height: 40px;

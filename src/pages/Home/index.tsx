@@ -5,12 +5,12 @@ import Stacks from '../../components/Stacks'
 
 const Home = () => {
   return (
-    <div className="container">
+    <>
       <Hero />
       <Stacks />
       <About />
       <Highlights />
-    </div>
+    </>
   )
 }
 

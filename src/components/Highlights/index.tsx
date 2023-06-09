@@ -1,14 +1,16 @@
 import React from 'react'
 import SectionTitle from '../SectionTitle'
 import Card from '../Card'
+import { Container } from './styles'
 
 const Highlights = () => {
   return (
     <div className="conatiner">
       <SectionTitle>Projetos destaque</SectionTitle>
-      <div>
+      <Container>
         <Card />
-      </div>
+        <Card />
+      </Container>
     </div>
   )
 }
