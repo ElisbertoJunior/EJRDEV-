@@ -3,6 +3,7 @@ import { styled } from 'styled-components'
 export const CardContainer = styled.div`
   margin: 60px 0 0;
   border-radius: 10px;
+
   color: ${(props) => props.theme.textColor};
   font-style: oblique;
 
@@ -13,6 +14,8 @@ export const CardContainer = styled.div`
 
   img {
     width: 100%;
+    height: 50%;
+    object-fit: cover;
     border-radius: 10px 10px 0 0;
   }
 

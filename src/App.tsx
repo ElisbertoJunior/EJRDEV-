@@ -12,24 +12,29 @@ import Footer from './components/Footer'
 
 import sun from './assets/icons/sun.png'
 import moon from './assets/icons/moon.png'
+import { Provider } from 'react-redux'
+
+import { store } from './store'
 
 const App = () => {
   const [useDarkTheme, setUseDarkTheme] = useState(true)
 
   return (
-    <ThemeProvider theme={useDarkTheme ? darkTheme : lightTheme}>
-      <BrowserRouter>
-        <GlobalStyle />
-        <Header />
-        <div className="container">
-          <Routes />
-        </div>
-        <Footer />
-      </BrowserRouter>
-      <ThemeButton onClick={() => setUseDarkTheme(!useDarkTheme)}>
-        <img height={45} src={useDarkTheme ? moon : sun} />
-      </ThemeButton>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={useDarkTheme ? darkTheme : lightTheme}>
+        <BrowserRouter>
+          <GlobalStyle />
+          <Header />
+          <div className="container">
+            <Routes />
+          </div>
+          <Footer />
+        </BrowserRouter>
+        <ThemeButton onClick={() => setUseDarkTheme(!useDarkTheme)}>
+          <img height={45} src={useDarkTheme ? moon : sun} />
+        </ThemeButton>
+      </ThemeProvider>
+    </Provider>
   )
 }
 
