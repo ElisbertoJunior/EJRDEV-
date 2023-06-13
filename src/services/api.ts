@@ -16,10 +16,6 @@ type PurchasePayload = {
 
 type PurchaseResponse = {
   token: string
-  user: {
-    username: string
-    passwordAndUserMatch: boolean
-  }
 }
 
 const api = createApi({
@@ -33,7 +29,7 @@ const api = createApi({
     getFeaturedProjects: builder.query<Project[], void>({
       query: () => 'api/destaques'
     }),
-    login: builder.mutation<PurchaseResponse, PurchasePayload>({
+    login: builder.mutation<{ token: string }, PurchasePayload>({
       query: (body) => ({
         url: 'user/login',
         method: 'POST',
