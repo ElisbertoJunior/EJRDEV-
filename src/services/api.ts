@@ -1,14 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-type Project = {
-  id: string
-  title: string
-  description: string
-  linkRepos: string
-  linkProject: string
-  src: string
-}
-
 type PurchasePayload = {
   username: string
   password: string
@@ -29,9 +20,25 @@ const api = createApi({
     getFeaturedProjects: builder.query<Project[], void>({
       query: () => 'api/destaques'
     }),
-    login: builder.mutation<{ token: string }, PurchasePayload>({
+    login: builder.mutation<PurchaseResponse, PurchasePayload>({
       query: (body) => ({
         url: 'user/login',
+        method: 'POST',
+        body
+      })
+    }),
+    // eslint-disable-next-line prettier/prettier
+    addProject: builder.mutation<{ msg: string }, FormData>({
+      query: (body) => ({
+        url: 'api/projects',
+        method: 'POST',
+        body
+      })
+    }),
+    // eslint-disable-next-line prettier/prettier
+    addFeaturedProject: builder.mutation<{ msg: string }, Partial<PurchasePayloadProject>>({
+      query: (body) => ({
+        url: 'api/destaques',
         method: 'POST',
         body
       })
@@ -42,7 +49,9 @@ const api = createApi({
 export const {
   useGetListQuery,
   useGetFeaturedProjectsQuery,
-  useLoginMutation
+  useLoginMutation,
+  useAddProjectMutation,
+  useAddFeaturedProjectMutation
 } = api
 
 export default api

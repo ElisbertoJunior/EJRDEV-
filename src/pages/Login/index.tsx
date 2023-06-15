@@ -23,6 +23,8 @@ const Login = () => {
     try {
       const result = await login(form)
 
+      console.log(form)
+
       if ('data' in result && result.data.token) {
         const token = result.data.token
         localStorage.setItem('token', token)
