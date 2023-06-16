@@ -1,5 +1,10 @@
 import { createGlobalStyle } from 'styled-components'
 
+export const breakpoints = {
+  desktop: '1024px',
+  tablet: '768px'
+}
+
 const GlobalStyle = createGlobalStyle`
   * {
     margin: 0;
@@ -8,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Roboto', sans-serif;
     list-style: none;
     text-decoration: none;
-
 
   }
 

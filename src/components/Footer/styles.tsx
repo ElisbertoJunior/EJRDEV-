@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { breakpoints } from '../../style'
 
 export const FooterContainer = styled.div`
   background-color: ${(props) => props.theme.backgroundFooterColor};
@@ -25,6 +26,12 @@ export const FooterContent = styled.div`
   p {
     padding-bottom: 8px;
     font-size: 14px;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
   }
 `
 export const LinkItems = styled.ul`

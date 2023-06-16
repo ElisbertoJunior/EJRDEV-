@@ -3,6 +3,7 @@ import { styled } from 'styled-components'
 export const CardContainer = styled.div`
   margin: 60px 0 0;
   border-radius: 10px;
+  min-height: 500px;
 
   color: ${(props) => props.theme.textColor};
   font-style: oblique;
@@ -67,4 +68,10 @@ export const WebButton = styled(GitHubButton)`
   a {
     color: #f5f5f5;
   }
+`
+export const DeleteButton = styled(GitHubButton)`
+  background: red;
+  color: #f5f5f5;
+  font-weight: bold;
+  font-style: oblique;
 `

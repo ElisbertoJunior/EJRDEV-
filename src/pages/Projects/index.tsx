@@ -13,8 +13,9 @@ const Projects = () => {
         {data &&
           data.map((project) => (
             <Card
-              key={project.id}
-              id={project.id}
+              cardType="user"
+              key={project._id}
+              _id={project._id}
               title={project.title}
               description={project.description}
               linkRepos={project.linkRepos}

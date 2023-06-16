@@ -1,42 +1,75 @@
-import { CardContainer, GitHubButton, WebButton } from './styles'
+import { CardContainer, DeleteButton, GitHubButton, WebButton } from './styles'
 import gitLogo from '../../assets/icons/github (2).png'
 import webLogo from '../../assets/icons/web.png'
 
-type Props = {
-  id: string
+export type Props = {
+  _id?: string
   title: string
   description: string
   linkRepos: string
   linkProject: string
   src: string
+  cardType: 'user' | 'admin'
+  onClick?: () => any
 }
 
 const Card = ({
-  id,
+  _id = '',
   title,
   description,
   linkRepos,
   linkProject,
-  src
+  src,
+  cardType,
+  onClick
 }: Props) => {
+  if (cardType === 'user') {
+    return (
+      <CardContainer id={_id}>
+        <img src={`https://api-ejrdev.onrender.com/${src}`} />
+        <div>
+          <h3>{title}</h3>
+          <p>{description}</p>
+          <div>
+            <GitHubButton>
+              <a href={linkRepos} target="_blank" rel="noreferrer">
+                <img src={gitLogo} />
+                Repositorio
+              </a>
+            </GitHubButton>
+            <WebButton>
+              <a href={linkProject} target="_blank" rel="noreferrer">
+                <img src={webLogo} />
+                Site
+              </a>
+            </WebButton>
+          </div>
+        </div>
+      </CardContainer>
+    )
+  }
+
   return (
-    <CardContainer id={id}>
-      <img src={`http://localhost:4000/${src}`} />
+    <CardContainer id={_id}>
+      <img src={`https://api-ejrdev.onrender.com/${src}`} />
       <div>
         <h3>{title}</h3>
         <p>{description}</p>
-        <GitHubButton>
-          <a href={linkRepos}>
-            <img src={gitLogo} />
-            Repositorio
-          </a>
-        </GitHubButton>
-        <WebButton>
-          <a href={linkProject}>
-            <img src={webLogo} />
-            Site
-          </a>
-        </WebButton>
+        <div>
+          <GitHubButton>
+            <a href={linkRepos} target="_blank" rel="noreferrer">
+              <img src={gitLogo} />
+              Repositorio
+            </a>
+          </GitHubButton>
+          <WebButton>
+            <a href={linkProject} target="_blank" rel="noreferrer">
+              <img src={webLogo} />
+              Site
+            </a>
+          </WebButton>
+          <DeleteButton onClick={onClick}>Deletar</DeleteButton>
+        </div>
       </div>
     </CardContainer>
   )

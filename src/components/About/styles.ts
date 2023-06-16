@@ -1,4 +1,5 @@
 import { styled } from 'styled-components'
+import { breakpoints } from '../../style'
 
 export const AboutContainer = styled.div`
   margin: 92px 0;
@@ -29,6 +30,13 @@ export const AboutContent = styled.div`
     img {
       height: 40px;
       width: 40px;
+    }
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-direction: column;
+    p {
+      width: 95%;
     }
   }
 `

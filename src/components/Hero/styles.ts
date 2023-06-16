@@ -1,10 +1,16 @@
 import { styled } from 'styled-components'
+import { breakpoints } from '../../style'
 
 export const HeroContainer = styled.section`
   padding: 80px 0;
   color: ${(props) => props.theme.textColor};
 
   display: flex;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-direction: column;
+    gap: 24px;
+  }
 `
 export const HeroContent = styled.div`
   p {

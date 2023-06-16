@@ -1,64 +1,41 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { Navigate } from 'react-router-dom'
 import SectionTitle from '../../components/SectionTitle'
 import { clearToken } from '../../store/reducers/authSlice'
 import { RootReducer } from '../../store'
-import { Navigate } from 'react-router-dom'
-import { AdminButton, FormContainer } from './styles'
+import { AdminButton, FormContainer, ProjectsContainer } from './styles'
 import { useState } from 'react'
-import { useAddProjectMutation } from '../../services/api'
 
-type NewProjectFormData = {
-  title: string
-  description: string
-  linkRepos: string
-  linkProject: string
-  file: File | null
-}
+import FormProject from '../../components/FormProject'
+import FormFeaturedProject from '../../components/FormFeaturedProject'
+import {
+  useGetFeaturedProjectsQuery,
+  useGetListQuery,
+  useRemoveFeaturedProjectMutation,
+  useRemoveProjectMutation
+} from '../../services/api'
+import Card from '../../components/Card'
 
 const Admin = () => {
   const dispatch = useDispatch()
+
+  const [removeFeaturedProject] = useRemoveFeaturedProjectMutation()
+  const [removeProject] = useRemoveProjectMutation()
+
   const { isAuthenticated } = useSelector((state: RootReducer) => state.auth)
   const [highlightProject, setHighlightProject] = useState(false)
-  const [projectForm, setProjectForm] = useState<NewProjectFormData>({
-    title: '',
-    description: '',
-    linkRepos: '',
-    linkProject: '',
-    file: null
-  })
 
-  const [addProject, { isLoading }] = useAddProjectMutation()
+  const { data, isLoading } = useGetListQuery()
+  const { data: proj, isLoading: loading } = useGetFeaturedProjectsQuery()
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0] || null
-    setProjectForm((prevForm) => ({
-      ...prevForm,
-      file
-    }))
+  const handleRemoveProject = async (projectId: string) => {
+    console.log(projectId)
+    await removeProject(projectId)
   }
 
-  const handSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    if (!projectForm.file) {
-      alert('Por favor, selecione uma imagem para upload.')
-      return
-    }
-
-    const formData = new FormData()
-    formData.append('title', projectForm.title)
-    formData.append('description', projectForm.description)
-    formData.append('linkRepos', projectForm.linkRepos)
-    formData.append('linkProject', projectForm.linkProject)
-    formData.append('file', projectForm.file)
-
-    try {
-      const result = await addProject(formData)
-      console.log(result)
-      // ...
-    } catch (error) {
-      console.error('Erro de autenticação:', error)
-    }
+  const handleRemoveFeaturedProject = async (projectId: string) => {
+    await removeFeaturedProject(projectId)
+    console.log(projectId)
   }
 
   if (!isAuthenticated) return <Navigate to={'/login'} />
@@ -84,128 +61,7 @@ const Admin = () => {
             Novo projeto destaque
           </AdminButton>
         </div>
-        {highlightProject ? (
-          <form encType="multipart/form-data" onSubmit={handSubmit}>
-            <SectionTitle>
-              Adicionar a lista de projetos em destaque
-            </SectionTitle>
-            <input
-              type="text"
-              placeholder="Titulo"
-              name="title"
-              value={projectForm.title}
-              onChange={(e) =>
-                setProjectForm((prevForm) => ({
-                  ...prevForm,
-                  title: e.target.value
-                }))
-              }
-            />
-            <textarea
-              placeholder="Descrição"
-              name="description"
-              value={projectForm.description}
-              onChange={(e) =>
-                setProjectForm((prevForm) => ({
-                  ...prevForm,
-                  description: e.target.value
-                }))
-              }
-            />
-            <input
-              type="text"
-              placeholder="link para o repositório"
-              name="linkRepos"
-              value={projectForm.linkRepos}
-              onChange={(e) =>
-                setProjectForm((prevForm) => ({
-                  ...prevForm,
-                  linkRepos: e.target.value
-                }))
-              }
-            />
-            <input
-              type="text"
-              placeholder="link para teste do projeto"
-              name="linkProject"
-              value={projectForm.linkProject}
-              onChange={(e) =>
-                setProjectForm((prevForm) => ({
-                  ...prevForm,
-                  linkProject: e.target.value
-                }))
-              }
-            />
-            <input
-              className="input-file"
-              type="file"
-              placeholder="Imagem para capa do rojeto"
-              name="file"
-              onChange={handleFileChange}
-            />
-            <button type="submit">Adicionar</button>
-          </form>
-        ) : (
-          <form encType="multipart/form-data" onSubmit={handSubmit}>
-            <SectionTitle>Adicionar a lista de projetos</SectionTitle>
-            <input
-              type="text"
-              placeholder="Titulo"
-              name="title"
-              value={projectForm.title}
-              onChange={(e) =>
-                setProjectForm((prevForm) => ({
-                  ...prevForm,
-                  title: e.target.value
-                }))
-              }
-            />
-            <textarea
-              placeholder="Descrição"
-              name="description"
-              value={projectForm.description}
-              onChange={(e) =>
-                setProjectForm((prevForm) => ({
-                  ...prevForm,
-                  description: e.target.value
-                }))
-              }
-            />
-            <input
-              type="text"
-              placeholder="link para o repositório"
-              name="linkRepos"
-              value={projectForm.linkRepos}
-              onChange={(e) =>
-                setProjectForm((prevForm) => ({
-                  ...prevForm,
-                  linkRepos: e.target.value
-                }))
-              }
-            />
-            <input
-              type="text"
-              placeholder="link para teste do projeto"
-              name="linkProject"
-              value={projectForm.linkProject}
-              onChange={(e) =>
-                setProjectForm((prevForm) => ({
-                  ...prevForm,
-                  linkProject: e.target.value
-                }))
-              }
-            />
-            <input
-              className="input-file"
-              type="file"
-              placeholder="Imagem para capa do rojeto"
-              name="src"
-              accept="image/*"
-              onChange={handleFileChange}
-            />
-            <button type="submit">Adicionar</button>
-          </form>
-        )}
+        {highlightProject ? <FormProject /> : <FormFeaturedProject />}
         <AdminButton
           state="disabled"
           type="button"
@@ -214,6 +70,45 @@ const Admin = () => {
           Logout
         </AdminButton>
       </FormContainer>
+
+      {highlightProject ? (
+        <ProjectsContainer>
+          {proj &&
+            proj.map((project) => (
+              <Card
+                cardType="admin"
+                key={project._id}
+                _id={project._id}
+                title={project.title}
+                description={project.description}
+                linkRepos={project.linkRepos}
+                linkProject={project.linkProject}
+                src={project.src}
+                onClick={() => handleRemoveFeaturedProject(project._id)}
+              />
+            ))}
+        </ProjectsContainer>
+      ) : (
+        <ProjectsContainer>
+          {data &&
+            data.map((project) => (
+              <Card
+                cardType="admin"
+                key={project._id}
+                _id={project._id}
+                title={project.title}
+                description={project.description}
+                linkRepos={project.linkRepos}
+                linkProject={project.linkProject}
+                src={project.src}
+                onClick={() => {
+                  handleRemoveProject(project._id)
+                  console.log(project)
+                }}
+              />
+            ))}
+        </ProjectsContainer>
+      )}
     </>
   )
 }

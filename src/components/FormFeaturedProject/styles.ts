@@ -1,9 +1,5 @@
 import { styled } from 'styled-components'
 
-type Props = {
-  state: 'active' | 'disabled'
-}
-
 export const FormContainer = styled.div`
   display: flex;
   align-items: center;
@@ -63,20 +59,4 @@ export const FormContainer = styled.div`
       padding: 5px;
     }
   }
-`
-export const AdminButton = styled.button<Props>`
-  background-color: ${(props) =>
-    props.state === 'active' ? props.theme.blueColor : 'transparent'};
-  color: ${(props) =>
-    props.state === 'active' ? '#FFF' : props.theme.blueColor};
-  border: 2px solid ${(props) => props.theme.blueColor};
-  border-radius: 8px;
-  font-size: 16px;
-  padding: 8px 24px;
-  cursor: pointer;
-`
-export const ProjectsContainer = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 32px;
 `

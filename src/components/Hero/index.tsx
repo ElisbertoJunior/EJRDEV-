@@ -16,10 +16,12 @@ const Hero = () => {
           Desenvolvedor <span>Full-stack.</span>
         </h3>
         <p>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse iste
-          sint consectetur reiciendis nesciunt repellendus eum possimus quos
-          voluptatum, dolorem excepturi accusantium? Minima facere cumque quidem
-          cum, quis dolorum atque.
+          Desenvolvedor Full-Stack especializado na stack MERN, com proficiência
+          em Redux e TypeScript. Conhecimento atualizado das principais
+          tecnologias do mercado. Apaixonado por criar soluções robustas e
+          escaláveis, focadas em proporcionar experiências excepcionais aos
+          usuários. Pronto para enfrentar desafios e contribuir para projetos
+          inovadores.
         </p>
         <ul>
           <li>

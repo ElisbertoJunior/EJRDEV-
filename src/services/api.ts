@@ -11,7 +11,7 @@ type PurchaseResponse = {
 
 const api = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://localhost:4000'
+    baseUrl: 'https://api-ejrdev.onrender.com/'
   }),
   endpoints: (builder) => ({
     getList: builder.query<Project[], void>({
@@ -30,17 +30,29 @@ const api = createApi({
     // eslint-disable-next-line prettier/prettier
     addProject: builder.mutation<{ msg: string }, FormData>({
       query: (body) => ({
-        url: 'api/projects',
+        url: 'api/destaques',
         method: 'POST',
         body
       })
     }),
     // eslint-disable-next-line prettier/prettier
-    addFeaturedProject: builder.mutation<{ msg: string }, Partial<PurchasePayloadProject>>({
+    addFeaturedProject: builder.mutation<{ msg: string }, FormData>({
       query: (body) => ({
-        url: 'api/destaques',
+        url: 'api/projects',
         method: 'POST',
         body
+      })
+    }),
+    removeProject: builder.mutation<{ message: string }, string>({
+      query: (id) => ({
+        url: `api/projects/${id}`,
+        method: 'DELETE'
+      })
+    }),
+    removeFeaturedProject: builder.mutation<{ message: string }, string>({
+      query: (id) => ({
+        url: `api/destaques/${id}`,
+        method: 'DELETE'
       })
     })
   })
@@ -51,7 +63,9 @@ export const {
   useGetFeaturedProjectsQuery,
   useLoginMutation,
   useAddProjectMutation,
-  useAddFeaturedProjectMutation
+  useAddFeaturedProjectMutation,
+  useRemoveProjectMutation,
+  useRemoveFeaturedProjectMutation
 } = api
 
 export default api
