@@ -36,7 +36,7 @@ export const AboutContent = styled.div`
   @media (max-width: ${breakpoints.tablet}) {
     flex-direction: column;
     p {
-      width: 95%;
+      width: 90%;
     }
   }
 `
