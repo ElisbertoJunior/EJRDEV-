@@ -36,8 +36,12 @@ export const AboutContent = styled.div`
   @media (max-width: ${breakpoints.tablet}) {
     flex-direction: column;
     p {
-      width: 95%;
-      margin-left: 8px;
+      width: 90%;
+      margin-left: 24px;
+    }
+
+    ul {
+      margin-left: 24px;
     }
   }
 `
