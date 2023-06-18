@@ -2,9 +2,12 @@ import Card from '../../components/Card'
 import SectionTitle from '../../components/SectionTitle'
 import { ProjectsContainer } from './styles'
 import { useGetListQuery } from '../../services/api'
+import Loader from '../../components/Loader'
 
 const Projects = () => {
   const { data, isLoading } = useGetListQuery()
+
+  if (isLoading) return <Loader />
 
   return (
     <>
