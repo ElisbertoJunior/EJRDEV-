@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <div>
+      <div className="container">
         <img src={logo} alt="Logo EJRDEV" />
         <nav>
           <Links>

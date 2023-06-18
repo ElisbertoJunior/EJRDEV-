@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 
 export const ProjectsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-gap: 24px;
 
   @media (max-width: ${breakpoints.desktop}) {

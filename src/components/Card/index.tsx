@@ -26,7 +26,7 @@ const Card = ({
   if (cardType === 'user') {
     return (
       <CardContainer id={_id}>
-        <img src={`https://api-ejrdev.onrender.com/${src}`} />
+        <img src={src} />
         <div>
           <h3>{title}</h3>
           <p>{description}</p>
@@ -51,7 +51,7 @@ const Card = ({
 
   return (
     <CardContainer id={_id}>
-      <img src={`https://api-ejrdev.onrender.com/${src}`} />
+      <img src={src} />
       <div>
         <h3>{title}</h3>
         <p>{description}</p>

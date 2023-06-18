@@ -24,8 +24,8 @@ const App = () => {
       <ThemeProvider theme={useDarkTheme ? darkTheme : lightTheme}>
         <BrowserRouter>
           <GlobalStyle />
+          <Header />
           <div className="container">
-            <Header />
             <Routes />
           </div>
           <Footer />

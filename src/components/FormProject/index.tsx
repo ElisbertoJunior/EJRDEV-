@@ -37,8 +37,15 @@ const FormProject = () => {
     formData.append('file', projectForm.file)
 
     try {
-      const result = await addProject(formData)
-      console.log(result)
+      await addProject(formData)
+
+      projectForm.title = ''
+      projectForm.description = ''
+      projectForm.linkRepos = ''
+      projectForm.linkProject = ''
+      projectForm.file = null
+
+      alert('Projeto adicionado com sucesso!')
     } catch (error) {
       console.error('Erro ao adicionar projeto:', error)
     }

@@ -3,7 +3,7 @@ import SectionTitle from '../SectionTitle'
 import { useAddFeaturedProjectMutation } from '../../services/api'
 
 const FormFeaturedProject = () => {
-  const [addFeaturedProject] = useAddFeaturedProjectMutation()
+  const [addFeaturedProject, { isSuccess }] = useAddFeaturedProjectMutation()
   const [projectFeaturedForm, setProjectFeaturedForm] =
     useState<NewProjectFormData>({
       title: '',
@@ -37,8 +37,15 @@ const FormFeaturedProject = () => {
     formData.append('file', projectFeaturedForm.file)
 
     try {
-      const result = await addFeaturedProject(formData)
-      console.log(result)
+      await addFeaturedProject(formData)
+
+      projectFeaturedForm.title = ''
+      projectFeaturedForm.description = ''
+      projectFeaturedForm.linkRepos = ''
+      projectFeaturedForm.linkProject = ''
+      projectFeaturedForm.file = null
+
+      alert('Projeto adicionado com sucesso!')
     } catch (error) {
       console.error('Erro ao adicionar projeto:', error)
     }

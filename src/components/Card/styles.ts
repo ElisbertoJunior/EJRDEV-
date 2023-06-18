@@ -4,6 +4,7 @@ export const CardContainer = styled.div`
   margin: 60px 0 0;
   border-radius: 10px;
   min-height: 500px;
+  height: 100%;
 
   color: ${(props) => props.theme.textColor};
   font-style: oblique;
@@ -24,7 +25,7 @@ export const CardContainer = styled.div`
     padding: 24px 16px;
 
     p {
-      margin: 8px 0;
+      margin: 8px 0 0 0;
     }
   }
 
@@ -39,7 +40,7 @@ export const GitHubButton = styled.button`
   padding: 8px 0;
   border: none;
   border-radius: 8px;
-  margin-top: 20px;
+  margin-top: 8px;
 
   a {
     display: flex;

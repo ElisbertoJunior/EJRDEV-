@@ -22,7 +22,6 @@ const Highlights = () => {
               linkRepos={project.linkRepos}
               linkProject={project.linkProject}
               src={project.src}
-              onClick={() => console.log(project._id)}
             />
           ))}
       </Container>
