@@ -3,9 +3,12 @@ import SectionTitle from '../SectionTitle'
 import Card from '../Card'
 import { Container } from './styles'
 import { useGetFeaturedProjectsQuery } from '../../services/api'
+import Loader from '../Loader'
 
 const Highlights = () => {
   const { data, isLoading } = useGetFeaturedProjectsQuery()
+
+  if (isLoading) return <Loader />
 
   return (
     <div className="conatiner">

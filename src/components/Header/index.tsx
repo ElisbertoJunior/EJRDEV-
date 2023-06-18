@@ -40,13 +40,19 @@ const Header = () => {
       <NavMobile className={isOpen ? 'is-open' : ''}>
         <Links>
           <li>
-            <ItemLink to={'/'}>Início</ItemLink>
+            <ItemLink onClick={() => setIsOpen(false)} to={'/'}>
+              Início
+            </ItemLink>
           </li>
           <li>
-            <ItemLink to={'/projects'}>Projetos</ItemLink>
+            <ItemLink onClick={() => setIsOpen(false)} to={'/projects'}>
+              Projetos
+            </ItemLink>
           </li>
           <li>
-            <ItemLink to={'/contact'}>Contato</ItemLink>
+            <ItemLink onClick={() => setIsOpen(false)} to={'/contact'}>
+              Contato
+            </ItemLink>
           </li>
         </Links>
       </NavMobile>
