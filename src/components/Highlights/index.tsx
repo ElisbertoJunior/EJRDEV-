@@ -8,7 +8,14 @@ import Loader from '../Loader'
 const Highlights = () => {
   const { data, isLoading } = useGetFeaturedProjectsQuery()
 
-  if (isLoading) return <Loader />
+  if (isLoading) {
+    return (
+      <>
+        <SectionTitle>Projetos destaque</SectionTitle>
+        <Loader />
+      </>
+    )
+  }
 
   return (
     <div className="conatiner">
