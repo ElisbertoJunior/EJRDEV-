@@ -1,62 +1,62 @@
 import { useState } from 'react'
 import logo from '../../assets/images/EJRDEV.png'
-import {
-  Hamburger,
-  HeaderContainer,
-  ItemLink,
-  Links,
-  NavMobile
-} from './styles'
+import login from '../../assets/images/login.png'
+import * as S from './styles'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <HeaderContainer>
+    <S.HeaderContainer>
       <div className="container">
         <img src={logo} alt="Logo EJRDEV" />
         <nav>
-          <Links>
+          <S.Links>
             <li>
-              <ItemLink to={'/'}>Início</ItemLink>
+              <S.ItemLink to={'/'}>Início</S.ItemLink>
             </li>
             <li>
-              <ItemLink to={'/projects'}>Projetos</ItemLink>
+              <S.ItemLink to={'/projects'}>Projetos</S.ItemLink>
             </li>
             <li>
-              <ItemLink to={'/contact'}>Contato</ItemLink>
+              <S.ItemLink to={'/contact'}>Contato</S.ItemLink>
             </li>
-          </Links>
-          <Hamburger onClick={() => setIsOpen(!isOpen)}>
+            <li>
+              <S.ItemLink to={'/login'}>
+                <img src={login} alt="Icone de login" />
+              </S.ItemLink>
+            </li>
+          </S.Links>
+          <S.Hamburger onClick={() => setIsOpen(!isOpen)}>
             <div>
               <div />
               <div />
               <div />
             </div>
-          </Hamburger>
+          </S.Hamburger>
         </nav>
       </div>
 
-      <NavMobile className={isOpen ? 'is-open' : ''}>
-        <Links>
+      <S.NavMobile className={isOpen ? 'is-open' : ''}>
+        <S.Links>
           <li>
-            <ItemLink onClick={() => setIsOpen(false)} to={'/'}>
+            <S.ItemLink onClick={() => setIsOpen(false)} to={'/'}>
               Início
-            </ItemLink>
+            </S.ItemLink>
           </li>
           <li>
-            <ItemLink onClick={() => setIsOpen(false)} to={'/projects'}>
+            <S.ItemLink onClick={() => setIsOpen(false)} to={'/projects'}>
               Projetos
-            </ItemLink>
+            </S.ItemLink>
           </li>
           <li>
-            <ItemLink onClick={() => setIsOpen(false)} to={'/contact'}>
+            <S.ItemLink onClick={() => setIsOpen(false)} to={'/contact'}>
               Contato
-            </ItemLink>
+            </S.ItemLink>
           </li>
-        </Links>
-      </NavMobile>
-    </HeaderContainer>
+        </S.Links>
+      </S.NavMobile>
+    </S.HeaderContainer>
   )
 }
 

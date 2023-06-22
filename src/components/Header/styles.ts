@@ -42,6 +42,12 @@ export const ItemLink = styled(Link)`
   color: ${(props) => props.theme.blueColor};
   font-style: italic;
   font-weight: bold;
+
+  > img {
+    height: 20px;
+    width: 20px;
+    margin-top: 5px;
+  }
 `
 
 const slideAnimation = keyframes`
@@ -51,7 +57,7 @@ const slideAnimation = keyframes`
   }
 
   to {
-    max-height: 500px; /* Altura máxima do menu */
+    max-height: 500px;
     opacity: 1;
   }
 `
