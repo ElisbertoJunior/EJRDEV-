@@ -14,15 +14,17 @@ export const AboutContent = styled.div`
     align-items: center;
     justify-content: center;
 
-    > p {
-      width: 100%;
-      text-align: center;
-    }
+    > div {
+      p {
+        width: 90%;
+        text-align: flex-start;
+      }
 
-    > ul {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
     }
   }
 
