@@ -41,7 +41,7 @@ export const AboutContent = styled.div`
     }
 
     ul {
-      margin-left: 32px;
+      margin-left: 24px;
     }
   }
 `
