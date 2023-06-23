@@ -15,9 +15,11 @@ export const AboutContent = styled.div`
     justify-content: center;
 
     > div {
+      width: 90vw;
+      text-align: flex-start;
+
       p {
-        width: 90%;
-        text-align: flex-start;
+        width: 100%;
       }
 
       ul {
