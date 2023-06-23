@@ -35,8 +35,17 @@ export const AboutContent = styled.div`
 
   @media (max-width: ${breakpoints.tablet}) {
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     p {
-      width: 90%;
+      width: 100%;
+      text-align: center;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 `
