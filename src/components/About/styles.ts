@@ -37,11 +37,6 @@ export const AboutContent = styled.div`
     flex-direction: column;
     p {
       width: 90%;
-      margin-left: 24px;
-    }
-
-    ul {
-      margin-left: 24px;
     }
   }
 `
