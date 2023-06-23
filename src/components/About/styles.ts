@@ -9,6 +9,22 @@ export const AboutContent = styled.div`
   max-width: 900px;
   color: ${(props) => props.theme.textColor};
 
+  @media (max-width: ${breakpoints.tablet}) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p {
+      width: 100%;
+      text-align: center;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
   align-items: center;
   width: 100%;
   gap: 48px;
@@ -30,22 +46,6 @@ export const AboutContent = styled.div`
     img {
       height: 40px;
       width: 40px;
-    }
-  }
-
-  @media (max-width: ${breakpoints.tablet}) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    p {
-      width: 100%;
-      text-align: center;
-    }
-
-    ul {
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
   }
 `
