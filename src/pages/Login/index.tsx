@@ -1,11 +1,14 @@
 import { useState } from 'react'
-import SectionTitle from '../../components/SectionTitle'
-import { FormContainer } from './styles'
-import { useLoginMutation } from '../../services/api'
-import { setToken } from '../../store/reducers/authSlice'
+import { Navigate } from 'react-router-dom'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
-import { Navigate } from 'react-router-dom'
+import { useLoginMutation } from '../../services/api'
+
+import SectionTitle from '../../components/SectionTitle'
+import { setToken } from '../../store/reducers/authSlice'
+
+import { FormContainer } from './styles'
 
 interface FormObject {
   username: string
@@ -13,7 +16,7 @@ interface FormObject {
 }
 
 const Login = () => {
-  const [login, { isLoading, isError }] = useLoginMutation()
+  const [login] = useLoginMutation()
   const { isAuthenticated } = useSelector((state: RootReducer) => state.auth)
   const dispatch = useDispatch()
 

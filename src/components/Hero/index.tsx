@@ -1,14 +1,14 @@
 import heroImage from '../../assets/images/pc.svg'
 import git from '../../assets/icons/github (2).png'
 import linkedin from '../../assets/icons/likedin.png'
-import { HeroContainer, HeroContent, MainButton } from './styles'
-
 import download from '../../assets/icons/donwload.png'
+
+import * as S from './styles'
 
 const Hero = () => {
   return (
-    <HeroContainer>
-      <HeroContent>
+    <S.HeroContainer>
+      <S.HeroContent>
         <h2>
           Olá, eu sou Elisberto <span>Junior</span>!
         </h2>
@@ -44,14 +44,14 @@ const Hero = () => {
           </li>
         </ul>
         <a href="https://drive.google.com/u/0/uc?id=1fvNkvMXqlnmckd1ylnwvKHicM4WLLFMR&export=download">
-          <MainButton>
+          <S.MainButton>
             Baixar CV
             <img src={download} />
-          </MainButton>
+          </S.MainButton>
         </a>
-      </HeroContent>
+      </S.HeroContent>
       <img src={heroImage} />
-    </HeroContainer>
+    </S.HeroContainer>
   )
 }
 

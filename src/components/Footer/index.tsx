@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { FooterContainer, FooterContent, LinkItems } from './styles'
+import * as S from './styles'
 import gitLogo from '../../assets/icons/github (2).png'
 import linkedinLogo from '../../assets/icons/likedin.png'
 import whattsLogo from '../../assets/icons/whattsicon.png'
@@ -8,24 +8,24 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <FooterContainer>
+    <S.FooterContainer>
       <div className="container">
-        <FooterContent>
+        <S.FooterContent>
           <div>
             <nav>
               <h4>Acesso rápido</h4>
-              <LinkItems>
+              <S.LinkItems>
                 <li>
                   <Link to={'/'}>Início</Link>
                 </li>
                 <li>
                   <Link to={'/projects'}>Prejetos</Link>
                 </li>
-              </LinkItems>
+              </S.LinkItems>
             </nav>
             <nav>
               <h4>Contato</h4>
-              <LinkItems>
+              <S.LinkItems>
                 <li>
                   <a
                     href="https://github.com/ElisbertoJunior"
@@ -53,15 +53,15 @@ const Footer = () => {
                     <img src={whattsLogo} />
                   </a>
                 </li>
-              </LinkItems>
+              </S.LinkItems>
             </nav>
           </div>
           <p>
             {currentYear} - &copy; Elisberto Junior Todos os direitos reservados
           </p>
-        </FooterContent>
+        </S.FooterContent>
       </div>
-    </FooterContainer>
+    </S.FooterContainer>
   )
 }
 

@@ -1,4 +1,4 @@
-import { CardContainer, DeleteButton, GitHubButton, WebButton } from './styles'
+import * as S from './styles'
 import gitLogo from '../../assets/icons/github (2).png'
 import webLogo from '../../assets/icons/web.png'
 
@@ -25,53 +25,53 @@ const Card = ({
 }: Props) => {
   if (cardType === 'user') {
     return (
-      <CardContainer id={_id}>
+      <S.CardContainer id={_id}>
         <img src={src} />
         <div>
           <h3>{title}</h3>
           <p>{description}</p>
           <div>
-            <GitHubButton>
+            <S.GitHubButton>
               <a href={linkRepos} target="_blank" rel="noreferrer">
                 <img src={gitLogo} />
                 Repositorio
               </a>
-            </GitHubButton>
-            <WebButton>
+            </S.GitHubButton>
+            <S.WebButton>
               <a href={linkProject} target="_blank" rel="noreferrer">
                 <img src={webLogo} />
                 Site
               </a>
-            </WebButton>
+            </S.WebButton>
           </div>
         </div>
-      </CardContainer>
+      </S.CardContainer>
     )
   }
 
   return (
-    <CardContainer id={_id}>
+    <S.CardContainer id={_id}>
       <img src={src} />
       <div>
         <h3>{title}</h3>
         <p>{description}</p>
         <div>
-          <GitHubButton>
+          <S.GitHubButton>
             <a href={linkRepos} target="_blank" rel="noreferrer">
               <img src={gitLogo} />
               Repositorio
             </a>
-          </GitHubButton>
-          <WebButton>
+          </S.GitHubButton>
+          <S.WebButton>
             <a href={linkProject} target="_blank" rel="noreferrer">
               <img src={webLogo} />
               Site
             </a>
-          </WebButton>
-          <DeleteButton onClick={onClick}>Deletar</DeleteButton>
+          </S.WebButton>
+          <S.DeleteButton onClick={onClick}>Deletar</S.DeleteButton>
         </div>
       </div>
-    </CardContainer>
+    </S.CardContainer>
   )
 }
 

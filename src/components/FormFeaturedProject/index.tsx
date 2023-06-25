@@ -3,7 +3,7 @@ import SectionTitle from '../SectionTitle'
 import { useAddFeaturedProjectMutation } from '../../services/api'
 
 const FormFeaturedProject = () => {
-  const [addFeaturedProject, { isSuccess }] = useAddFeaturedProjectMutation()
+  const [addFeaturedProject] = useAddFeaturedProjectMutation()
   const [projectFeaturedForm, setProjectFeaturedForm] =
     useState<NewProjectFormData>({
       title: '',

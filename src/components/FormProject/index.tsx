@@ -3,7 +3,7 @@ import SectionTitle from '../SectionTitle'
 import { useAddProjectMutation } from '../../services/api'
 
 const FormProject = () => {
-  const [addProject, { isLoading }] = useAddProjectMutation()
+  const [addProject] = useAddProjectMutation()
 
   const [projectForm, setProjectForm] = useState<NewProjectFormData>({
     title: '',

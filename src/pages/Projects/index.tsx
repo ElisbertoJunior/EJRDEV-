@@ -1,8 +1,10 @@
+import { useGetListQuery } from '../../services/api'
+
 import Card from '../../components/Card'
 import SectionTitle from '../../components/SectionTitle'
-import { ProjectsContainer } from './styles'
-import { useGetListQuery } from '../../services/api'
 import Loader from '../../components/Loader'
+
+import { ProjectsContainer } from './styles'
 
 const Projects = () => {
   const { data, isLoading } = useGetListQuery()

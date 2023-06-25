@@ -1,9 +1,8 @@
-import React from 'react'
+import { useGetFeaturedProjectsQuery } from '../../services/api'
 import SectionTitle from '../SectionTitle'
 import Card from '../Card'
-import { Container } from './styles'
-import { useGetFeaturedProjectsQuery } from '../../services/api'
 import Loader from '../Loader'
+import { Container } from './styles'
 
 const Highlights = () => {
   const { data, isLoading } = useGetFeaturedProjectsQuery()

@@ -1,10 +1,11 @@
 import SectionTitle from '../../components/SectionTitle'
-import { CardContact, ContactContainer } from './styles'
 import imgProfile from '../../assets/images/perfil.png'
 import git from '../../assets/icons/github (2).png'
 import linkedin from '../../assets/icons/likedin.png'
 import watts from '../../assets/icons/whattsicon.png'
 import mail from '../../assets/icons/mail (1).png'
+
+import { CardContact, ContactContainer } from './styles'
 
 const Contact = () => {
   return (

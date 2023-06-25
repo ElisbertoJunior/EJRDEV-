@@ -1,20 +1,21 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom'
-import SectionTitle from '../../components/SectionTitle'
-import { clearToken } from '../../store/reducers/authSlice'
-import { RootReducer } from '../../store'
-import { AdminButton, FormContainer, ProjectsContainer } from './styles'
 import { useState } from 'react'
-
-import FormProject from '../../components/FormProject'
-import FormFeaturedProject from '../../components/FormFeaturedProject'
+import { Navigate } from 'react-router-dom'
 import {
   useGetFeaturedProjectsQuery,
   useGetListQuery,
   useRemoveFeaturedProjectMutation,
   useRemoveProjectMutation
 } from '../../services/api'
+import { clearToken } from '../../store/reducers/authSlice'
+import { RootReducer } from '../../store'
+
+import SectionTitle from '../../components/SectionTitle'
+import FormProject from '../../components/FormProject'
+import FormFeaturedProject from '../../components/FormFeaturedProject'
 import Card from '../../components/Card'
+
+import * as S from './styles'
 
 const Admin = () => {
   const dispatch = useDispatch()
@@ -25,8 +26,8 @@ const Admin = () => {
   const { isAuthenticated } = useSelector((state: RootReducer) => state.auth)
   const [highlightProject, setHighlightProject] = useState(false)
 
-  const { data, isLoading } = useGetListQuery()
-  const { data: proj, isLoading: loading } = useGetFeaturedProjectsQuery()
+  const { data } = useGetListQuery()
+  const { data: proj } = useGetFeaturedProjectsQuery()
 
   const handleRemoveProject = async (projectId: string) => {
     console.log(projectId)
@@ -42,37 +43,37 @@ const Admin = () => {
 
   return (
     <>
-      {/* {alert('Bem vindo de volta chefe!')} */}
+      {alert('Bem vindo de volta chefe!')}
       <SectionTitle>Gerenciar projetos</SectionTitle>
-      <FormContainer>
+      <S.FormContainer>
         <div>
-          <AdminButton
+          <S.AdminButton
             state={highlightProject ? 'disabled' : 'active'}
             type="button"
             onClick={() => setHighlightProject(false)}
           >
             Novo projeto
-          </AdminButton>
-          <AdminButton
+          </S.AdminButton>
+          <S.AdminButton
             state={highlightProject ? 'active' : 'disabled'}
             type="button"
             onClick={() => setHighlightProject(true)}
           >
             Novo projeto destaque
-          </AdminButton>
+          </S.AdminButton>
         </div>
         {highlightProject ? <FormProject /> : <FormFeaturedProject />}
-        <AdminButton
+        <S.AdminButton
           state="disabled"
           type="button"
           onClick={() => dispatch(clearToken())}
         >
           Logout
-        </AdminButton>
-      </FormContainer>
+        </S.AdminButton>
+      </S.FormContainer>
 
       {highlightProject ? (
-        <ProjectsContainer>
+        <S.ProjectsContainer>
           {proj &&
             proj.map((project) => (
               <Card
@@ -87,9 +88,9 @@ const Admin = () => {
                 onClick={() => handleRemoveFeaturedProject(project._id)}
               />
             ))}
-        </ProjectsContainer>
+        </S.ProjectsContainer>
       ) : (
-        <ProjectsContainer>
+        <S.ProjectsContainer>
           {data &&
             data.map((project) => (
               <Card
@@ -107,7 +108,7 @@ const Admin = () => {
                 }}
               />
             ))}
-        </ProjectsContainer>
+        </S.ProjectsContainer>
       )}
     </>
   )
