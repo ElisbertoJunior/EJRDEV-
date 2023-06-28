@@ -10,8 +10,8 @@ import typescript from '../../assets/icons/typescript.png'
 import redux from '../../assets/icons/redux.png'
 import styled from '../../assets/icons/styled.png'
 import node from '../../assets/icons/node.png'
-import express from '../../assets/icons/express.png'
-import mongo from '../../assets/icons/mongo.png'
+import java from '../../assets/icons/java.png'
+import spring from '../../assets/icons/spring.png'
 
 import { StackItem, StackList } from './styles'
 
@@ -68,12 +68,12 @@ const Stacks = () => {
           <p>NODEJS</p>
         </StackItem>
         <StackItem>
-          <img src={express} />
-          <p>EXPRESSJS</p>
+          <img src={java} />
+          <p>JAVA</p>
         </StackItem>
         <StackItem>
-          <img src={mongo} />
-          <p>MONGODB</p>
+          <img src={spring} />
+          <p>SPRING</p>
         </StackItem>
       </StackList>
     </>

@@ -16,12 +16,14 @@ const Hero = () => {
           Desenvolvedor <span>Full-stack.</span>
         </h3>
         <p>
-          Desenvolvedor Full-Stack especializado na stack MERN, com proficiência
-          em Redux e TypeScript. Conhecimento atualizado das principais
-          tecnologias do mercado. Apaixonado por criar soluções robustas e
-          escaláveis, focadas em proporcionar experiências excepcionais aos
-          usuários. Pronto para enfrentar desafios e contribuir para projetos
-          inovadores.
+          Sou um desenvolvedor Full-Stack com experiência em Java e Spring no
+          back-end, e React com TypeScript no front-end. Tenho conhecimentos
+          sólidos em bancos de dados SQL. Estou em constante aprendizado e me
+          atualizando com as principais tecnologias do mercado. Tenho paixão por
+          criar soluções robustas, escaláveis e proporcionar experiências
+          excepcionais aos usuários. Estou pronto para enfrentar desafios e
+          contribuir para projetos inovadores, utilizando minhas habilidades e
+          vontade de aprender para atingir resultados de qualidade.
         </p>
         <ul>
           <li>

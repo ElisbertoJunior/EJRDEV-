@@ -17,8 +17,8 @@ const About = () => {
             dia após dia.
             <br />
             <br />
-            Meu foco de desenvolvimento e com JavaScript, TypeScript, NodeJS,
-            React dentre outras tecnologias que uso no meu dia a dia.
+            Meu foco de desenvolvimento e com Java, JavaScript, TypeScript,
+            Spring, React dentre outras tecnologias que uso no meu dia a dia.
             <br />
             <br />
             Sou ágil e consistente em aprender qualquer tecnologia e alta
