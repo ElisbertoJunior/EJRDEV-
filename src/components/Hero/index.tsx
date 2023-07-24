@@ -45,7 +45,7 @@ const Hero = () => {
             </a>
           </li>
         </ul>
-        <a href="https://drive.google.com/u/0/uc?id=1fvNkvMXqlnmckd1ylnwvKHicM4WLLFMR&export=download">
+        <a href="https://drive.google.com/u/0/uc?id=1akw5FntDJSluhJvpqiVDF-RPpcoJ1it5&export=download">
           <S.MainButton>
             Baixar CV
             <img src={download} />

@@ -21,7 +21,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <ThemeProvider theme={useDarkTheme ? darkTheme : lightTheme}>
+      <ThemeProvider theme={useDarkTheme ? lightTheme : darkTheme}>
         <BrowserRouter>
           <GlobalStyle />
           <Header />
@@ -31,7 +31,7 @@ const App = () => {
           <Footer />
         </BrowserRouter>
         <ThemeButton onClick={() => setUseDarkTheme(!useDarkTheme)}>
-          <img height={45} src={useDarkTheme ? moon : sun} />
+          <img height={45} src={useDarkTheme ? sun : moon} />
         </ThemeButton>
       </ThemeProvider>
     </Provider>
